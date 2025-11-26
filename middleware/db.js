@@ -2,8 +2,8 @@ const mysql = require("mysql2");
 
 var connection = mysql.createPool({
   host: "31.97.118.193", // IP السيرفر Taxigo
-  user: "taxigo", // اسم User على cPanel
-  password: "Fathy@1996", // كلمة السر
+  user: "taxigo_dev", // اسم User على cPanel
+  password: "Marwan@#Net", // كلمة السر
   database: "taxigo_zippygo", // اسم قاعدة البيانات
   connectionLimit: 10,
   charset: "utf8mb4",
