@@ -1,0 +1,30 @@
+const mysql = require("mysql2");
+
+var connection = mysql.createPool({
+  host: "31.97.118.193", // IP السيرفر Taxigo
+  user: "taxigo", // اسم User على cPanel
+  password: "Fathy@1996", // كلمة السر
+  database: "taxigo_zippygo", // اسم قاعدة البيانات
+  connectionLimit: 10,
+  charset: "utf8mb4",
+});
+
+// var connection = mysql.createPool({
+//     host     : 'localhost',
+//     user     : 'username',
+//     password : 'password',
+//     database : 'database',
+//     connectionLimit : 100,
+//     charset: 'utf8mb4'
+//   });
+
+const mySqlQury = (qry) => {
+  return new Promise((resolve, reject) => {
+    connection.query(qry, (err, row) => {
+      if (err) return reject(err);
+      resolve(row);
+    });
+  });
+};
+
+module.exports = { connection, mySqlQury };
